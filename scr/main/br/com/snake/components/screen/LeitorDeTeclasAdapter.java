@@ -1,6 +1,6 @@
 package scr.main.br.com.snake.components.screen;
 
-import scr.main.br.com.snake.components.Cobrinha;
+import scr.main.br.com.snake.components.snakeComponente.Cobrinha;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -11,21 +11,25 @@ public class LeitorDeTeclasAdapter extends KeyAdapter {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT -> {
                 if (Cobrinha.direcao != 'D') {
+                    System.out.println("D");
                     Cobrinha.direcao = 'E';
                 }
             }
             case KeyEvent.VK_RIGHT -> {
                 if (Cobrinha.direcao != 'E') {
+                    System.out.println("E");
                     Cobrinha.direcao = 'D';
                 }
             }
             case KeyEvent.VK_UP -> {
                 if (Cobrinha.direcao != 'B') {
+                    System.out.println("B");
                     Cobrinha.direcao = 'C';
                 }
             }
             case KeyEvent.VK_DOWN -> {
                 if (Cobrinha.direcao != 'C') {
+                    System.out.println("C");
                     Cobrinha.direcao = 'B';
                 }
             }

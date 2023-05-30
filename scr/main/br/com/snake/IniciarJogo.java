@@ -6,7 +6,7 @@ import scr.main.br.com.snake.components.screen.TelaJogo;
 public class IniciarJogo extends JFrame {
 
     public static void main(String[] args) {
-        new IniciarJogo();
+        new IniciarJogo(); // instanciando JFrame
     }
 
     IniciarJogo() {

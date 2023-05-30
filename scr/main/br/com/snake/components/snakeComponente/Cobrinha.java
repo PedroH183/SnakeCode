@@ -1,4 +1,4 @@
-package scr.main.br.com.snake.components;
+package scr.main.br.com.snake.components.snakeComponente;
 
 import scr.main.br.com.snake.components.screen.TelaJogo;
 

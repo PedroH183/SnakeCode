@@ -3,12 +3,7 @@ package scr.main.br.com.snake.components.screen;
 import scr.main.br.com.snake.components.snakeComponente.Cobrinha;
 
 import java.awt.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,7 +29,7 @@ public class TelaJogo extends JPanel implements ActionListener{
     public static Timer timer;
     static Random random;
 
-    public TelaJogo() throws IOException {
+    public TelaJogo(){
         // inicializando a cobrinha
         this.cobrinha = new Cobrinha(4,'D');
 

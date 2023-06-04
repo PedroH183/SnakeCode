@@ -3,14 +3,12 @@ package scr.main.br.com.snake;
 import javax.swing.*;
 import scr.main.br.com.snake.components.screen.TelaJogo;
 
-import java.io.IOException;
-
 public class IniciarJogo extends JFrame {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new IniciarJogo(); // instanciando JFrame
     }
 
-    IniciarJogo() throws IOException {
+    IniciarJogo(){
         /* Criando a janela do jogo */
         add(new TelaJogo());
 

@@ -3,8 +3,12 @@ package scr.main.br.com.snake.components.screen;
 import scr.main.br.com.snake.components.snakeComponente.Cobrinha;
 
 import java.awt.*;
-import javax.swing.*; 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +17,7 @@ public class TelaJogo extends JPanel implements ActionListener{
 
     // configs da tela
     public static final int LARGURA_TELA = 1000;
-    public static final int ALTURA_TELA = 400;
+    public static final int ALTURA_TELA = 550;
     public static final int TAMANHO_BLOCO = 50;
     public static final int UNIDADES = LARGURA_TELA * ALTURA_TELA;
 
@@ -30,7 +34,7 @@ public class TelaJogo extends JPanel implements ActionListener{
     public static Timer timer;
     static Random random;
 
-    public TelaJogo() {
+    public TelaJogo() throws IOException {
         // inicializando a cobrinha
         this.cobrinha = new Cobrinha(4,'D');
 
@@ -60,8 +64,10 @@ public class TelaJogo extends JPanel implements ActionListener{
 
     public void desenharTela(Graphics g) {
         if(estaRodando){
-            g.setColor(Color.red);
+            // gerando as maças
+            g.setColor(new Color(164,53,2));
             g.fillOval(blocoX, blocoY, TAMANHO_BLOCO, TAMANHO_BLOCO);
+
             // personalizando a cobrinha
             for (int i = 0; i < this.cobrinha.corpoCobra; i++) {
                 if( i % 2 == 1 ){

@@ -1,29 +1,20 @@
 package scr.main.br.com.snake.components.screen;
 
-import scr.main.br.com.snake.components.snakeComponente.Cobrinha;
-
 import java.awt.*;
 import javax.swing.*;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import scr.main.br.com.snake.components.snakeComponente.Cobrinha;
 
-public class TelaJogo extends JPanel implements ActionListener{
+public class TelaJogo extends JPanel implements ActionListener, PropsTelas{
 
-    // configs da tela
-    public static final int LARGURA_TELA = 1000;
-    public static final int ALTURA_TELA = 550;
-    public static final int TAMANHO_BLOCO = 50;
-    public static final int UNIDADES = LARGURA_TELA * ALTURA_TELA;
-
-    private static final int INTERVALO_ = 180; // Velocidade da renderização do jogo
-    private static final String NOME_FONTE = "Agave";
-
+    // coordenadas de geração
     public static int blocoX;
     public static int blocoY;
 
     // configs da cobrinha
-    private final Cobrinha cobrinha;
+    public static Cobrinha cobrinha = null;
     public static boolean estaRodando = false;
 
     public static Timer timer;
@@ -31,7 +22,7 @@ public class TelaJogo extends JPanel implements ActionListener{
 
     public TelaJogo(){
         // inicializando a cobrinha
-        this.cobrinha = new Cobrinha(4,'D');
+        cobrinha = new Cobrinha(4,'D');
 
         // renderizando a tela
         random = new Random();
@@ -64,7 +55,7 @@ public class TelaJogo extends JPanel implements ActionListener{
             g.fillOval(blocoX, blocoY, TAMANHO_BLOCO, TAMANHO_BLOCO);
 
             // personalizando a cobrinha
-            for (int i = 0; i < this.cobrinha.corpoCobra; i++) {
+            for (int i = 0; i < cobrinha.corpoCobra; i++) {
                 if( i % 2 == 1 ){
                     g.setColor(new Color(239,214,49));
                     g.fillRect(Cobrinha.eixoX[i],Cobrinha.eixoY[i], TAMANHO_BLOCO, TAMANHO_BLOCO);
@@ -74,6 +65,7 @@ public class TelaJogo extends JPanel implements ActionListener{
                 g.fillRect( Cobrinha.eixoX[i], Cobrinha.eixoY[i], TAMANHO_BLOCO, TAMANHO_BLOCO);
             }
 
+            // personalização da pontuação
             g.setColor(new Color(226, 201, 183));
             g.setFont(new Font(NOME_FONTE, Font.BOLD, 40));
             FontMetrics metrics = getFontMetrics(g.getFont());
@@ -107,7 +99,7 @@ public class TelaJogo extends JPanel implements ActionListener{
         if (estaRodando) {
             cobrinha.andar();
             cobrinha.alcancarBloco();
-            this.cobrinha.validarLimites();
+            cobrinha.validarLimites();
         }
         repaint();
     }

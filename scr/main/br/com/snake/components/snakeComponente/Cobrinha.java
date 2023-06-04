@@ -10,6 +10,7 @@ public class Cobrinha {
 
     public static final int[] eixoX = new int[TelaJogo.UNIDADES]; // blocos da cobrinha
     public static final int[] eixoY = new int[TelaJogo.UNIDADES]; // blocos da cobrinha
+
     public Cobrinha( int TAM_INIT, char ORIENTACAO ){
         direcao = ORIENTACAO;
         this.corpoCobra = TAM_INIT;

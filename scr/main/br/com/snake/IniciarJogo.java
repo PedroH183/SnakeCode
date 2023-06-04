@@ -4,7 +4,6 @@ import javax.swing.*;
 import scr.main.br.com.snake.components.screen.TelaJogo;
 
 public class IniciarJogo extends JFrame {
-
     public static void main(String[] args) {
         new IniciarJogo(); // instanciando JFrame
     }
@@ -16,8 +15,9 @@ public class IniciarJogo extends JFrame {
         /* Atribuindo as config das telas */
         setTitle("Jogo da Cobrinha");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(true);
+        setResizable(false);
         pack();
+        setFocusable(false);
         setVisible(true);
         setLocationRelativeTo(null);
     }
